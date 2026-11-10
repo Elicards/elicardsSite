@@ -130,3 +130,4 @@ body.accueil .hero{flex:1;display:flex;flex-direction:column}
 body.accueil .hero-grid{flex:1}
 body.accueil footer{margin-top:0}
 .hero h1 + .cta{margin-top:32px}
+body.accueil .hero-grid{align-content:center}
