@@ -131,3 +131,4 @@ body.accueil .hero-grid{flex:1}
 body.accueil footer{margin-top:0}
 .hero h1 + .cta{margin-top:32px}
 body.accueil .hero-grid{align-content:center}
+body.accueil .hero-grid{padding-block:32px}
