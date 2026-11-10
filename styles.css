@@ -1,0 +1,126 @@
+/* Site elicards.fr — même charte que l’app (www/styles/tokens.css) : bleu nuit du dos de carte, dégradé holographique,
+   Bricolage Grotesque (titres), Public Sans (textes), Spectral italique (marque). Aucune ressource externe, aucun cookie. */
+@font-face{font-family:"Bricolage Grotesque";font-weight:200 800;font-display:swap;src:url(assets/fonts/bricolage-grotesque.woff2) format("woff2")}
+@font-face{font-family:"Public Sans";font-weight:300 700;font-display:swap;src:url(assets/fonts/public-sans-latin.woff2) format("woff2");unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}
+@font-face{font-family:"Public Sans";font-weight:300 700;font-display:swap;src:url(assets/fonts/public-sans-latin-ext.woff2) format("woff2");unicode-range:U+0100-02BA,U+02BD-02C5,U+02C7-02CC,U+02CE-02D7,U+02DD-02FF,U+1D00-1DBF,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20C4,U+2113,U+2C60-2C7F,U+A720-A7FF}
+@font-face{font-family:"Spectral";font-style:italic;font-weight:800;font-display:swap;src:url(assets/fonts/spectral-800-italic.woff2) format("woff2")}
+
+:root{
+  --bleu-950:#070E36; --bleu-900:#0B1650; --bleu-800:#13227A; --bleu-700:#101B5E; --bleu-600:#1F3BB3; --bleu-400:#5B78F0; --bleu-100:#E4E9FB;
+  --blanc:#FFFFFF; --blanc-50:#F4F6FB; --argent:#C8CFDD; --rouge-600:#D7263D; --rouge-400:#FF5468; --gold-300:#F2D375;
+  --bg:var(--bleu-950); --ink:var(--blanc-50); --muted:#A9B3DE; --line:rgb(255 255 255/.12); --surface:rgb(255 255 255/.05);
+  --holo:linear-gradient(125deg,var(--argent) 0%,var(--bleu-400) 25%,var(--blanc-50) 50%,var(--rouge-400) 72%,var(--gold-300) 86%,var(--argent) 100%);
+  --font-title:"Bricolage Grotesque",system-ui,-apple-system,"Segoe UI",sans-serif;
+  --font-text:"Public Sans",system-ui,-apple-system,"Segoe UI",sans-serif;
+  --font-brand:"Spectral",Georgia,serif;
+  --radius-m:12px; --radius-l:16px; --radius-xl:24px; --radius-pill:999px;
+  --page:1080px; --gutter:clamp(16px,5vw,40px);
+  color-scheme:dark;
+}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--bg);color:var(--ink);font:400 16px/24px var(--font-text);overflow-x:hidden}
+img{display:block;max-width:100%}
+a{color:inherit}
+:focus-visible{outline:2px solid var(--bleu-400);outline-offset:3px;border-radius:4px}
+
+.wrap{width:100%;max-width:var(--page);margin-inline:auto;padding-inline:var(--gutter)}
+
+/* Marque : même dessin que le dos de carte (Spectral italique, dégradé holographique) */
+.brand{font:800 italic 26px/1 var(--font-brand);letter-spacing:.01em;text-decoration:none;
+  background:var(--holo);background-size:200% 100%;-webkit-background-clip:text;background-clip:text;color:transparent}
+.edition{font:600 12px/16px var(--font-text);letter-spacing:.12em;text-transform:uppercase;color:var(--argent)}
+
+/* En-tête */
+.top{display:flex;align-items:center;justify-content:space-between;gap:16px;padding-block:20px}
+.top .edition{white-space:nowrap}
+
+/* Hero */
+.hero{position:relative;isolation:isolate;background:radial-gradient(120% 90% at 50% 30%,var(--bleu-600) 0%,var(--bleu-900) 62%,var(--bleu-950) 100%);overflow:hidden}
+.hero::after{content:"";position:absolute;inset:auto 0 0;height:120px;background:linear-gradient(transparent,var(--bg));z-index:-1}
+.hero-grid{display:grid;grid-template-columns:1.05fr .95fr;align-items:center;gap:40px;padding-block:24px 72px}
+.hero h1{font:800 clamp(36px,6vw,64px)/1 var(--font-title);letter-spacing:-.02em;margin:0 0 20px;text-wrap:balance}
+.hero h1 em{font-style:normal;background:var(--holo);background-size:200% 100%;-webkit-background-clip:text;background-clip:text;color:transparent}
+.lead{font-size:18px;line-height:28px;color:var(--bleu-100);max-width:30em;margin:0 0 28px}
+.cta{display:flex;flex-wrap:wrap;align-items:center;gap:12px 20px}
+.pill{display:inline-flex;align-items:center;gap:10px;padding:12px 20px;border-radius:var(--radius-pill);
+  background:var(--blanc);color:var(--bleu-900);font:700 16px/20px var(--font-text);text-decoration:none}
+.pill .dot{width:8px;height:8px;border-radius:50%;background:var(--rouge-600);box-shadow:0 0 0 4px rgb(215 38 61/.18)}
+.cta .note{font-size:14px;line-height:20px;color:var(--muted)}
+
+/* Visuel : le booster devant deux dos de carte, qui s’inclinent avec le doigt ou la souris */
+.stage{position:relative;aspect-ratio:1/1;max-width:460px;width:100%;justify-self:center;perspective:1200px;--rx:0deg;--ry:0deg;--mx:50%;--my:50%}
+.stage .tilt{position:absolute;inset:0;transform-style:preserve-3d;transform:rotateX(var(--rx)) rotateY(var(--ry));transition:transform .5s cubic-bezier(.2,.8,.2,1)}
+.stage.suit .tilt{transition:transform .08s linear}
+.back{position:absolute;top:12%;width:44%;aspect-ratio:5/8;border-radius:5.3%/3.3%;overflow:hidden;box-shadow:0 18px 40px rgb(0 0 0/.45)}
+.back img{width:100%;height:100%}
+.back.g{left:6%;transform:rotate(-14deg) translateZ(-40px)}
+.back.d{right:6%;transform:rotate(14deg) translateZ(-40px)}
+.back .holo{position:absolute;inset:0;mix-blend-mode:screen;opacity:.95;background:var(--holo);background-size:260% 260%;
+  background-position:calc(100% - var(--mx)) calc(100% - var(--my));
+  -webkit-mask:url(assets/dos-traits.svg) center/100% 100% no-repeat;mask:url(assets/dos-traits.svg) center/100% 100% no-repeat}
+.pack{position:absolute;left:50%;top:2%;width:50%;transform:translateX(-50%) translateZ(40px);filter:drop-shadow(0 24px 40px rgb(0 0 0/.5))}
+.pack .shine{position:absolute;inset:0;mix-blend-mode:overlay;pointer-events:none;
+  background:radial-gradient(60% 40% at var(--mx) var(--my),rgb(255 255 255/.55),transparent 70%);
+  -webkit-mask:url(assets/booster.webp) center/100% 100% no-repeat;mask:url(assets/booster.webp) center/100% 100% no-repeat}
+
+/* Sections */
+section{padding-block:72px}
+.kicker{font:600 12px/16px var(--font-text);letter-spacing:.12em;text-transform:uppercase;color:var(--rouge-400);margin:0 0 12px}
+h2{font:800 clamp(28px,4vw,40px)/1.1 var(--font-title);letter-spacing:-.02em;margin:0 0 32px;text-wrap:balance}
+h3{font:800 20px/24px var(--font-title);letter-spacing:-.01em;margin:0 0 8px}
+p{margin:0}
+.muted{color:var(--muted)}
+
+.steps{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;counter-reset:etape;list-style:none;margin:0;padding:0}
+.steps li{position:relative;padding:24px;border-radius:var(--radius-l);background:var(--surface);border:1px solid var(--line)}
+.steps li::before{counter-increment:etape;content:counter(etape);display:block;margin:0 0 16px;
+  font:800 italic 40px/40px var(--font-brand);background:var(--holo);-webkit-background-clip:text;background-clip:text;color:transparent}
+.steps p{color:var(--bleu-100)}
+
+.engagements{display:grid;grid-template-columns:repeat(2,1fr);gap:16px}
+.engagement{display:flex;gap:16px;padding:24px;border-radius:var(--radius-l);border:1px solid var(--line)}
+.engagement .ico{flex:none;width:40px;height:40px;border-radius:50%;display:grid;place-items:center;background:rgb(91 120 240/.16);color:var(--bleu-100)}
+.engagement .ico svg{width:20px;height:20px}
+.engagement p{color:var(--bleu-100)}
+
+.contact{text-align:center;padding:72px var(--gutter);border-radius:var(--radius-xl);
+  background:radial-gradient(100% 140% at 50% 0%,var(--bleu-800),var(--bleu-900) 60%,var(--bleu-950));border:1px solid var(--line)}
+.contact h2{margin-bottom:12px}
+.contact p{color:var(--bleu-100);max-width:34em;margin:0 auto 24px}
+.mail{font:700 18px/24px var(--font-text);color:var(--blanc);text-decoration-color:var(--rouge-400);text-underline-offset:6px;overflow-wrap:anywhere}
+
+/* Pied de page */
+footer{padding-block:40px 48px;border-top:1px solid var(--line);margin-top:72px}
+.foot{display:flex;flex-wrap:wrap;justify-content:space-between;gap:16px 32px;font-size:14px;line-height:20px;color:var(--muted)}
+.foot nav{display:flex;flex-wrap:wrap;gap:8px 24px}
+.foot a{text-decoration:none}
+.foot a:hover{color:var(--blanc);text-decoration:underline}
+.disclaimer{margin-top:16px;font-size:12px;line-height:16px;color:var(--muted);max-width:52em}
+
+/* Pages de texte (mentions légales) */
+.doc{max-width:720px;padding-top:24px}
+.doc h1{font:800 clamp(32px,5vw,48px)/1.05 var(--font-title);letter-spacing:-.02em;margin:24px 0 32px}
+.doc h2{font-size:24px;line-height:28px;margin:40px 0 12px}
+.doc p,.doc li{color:var(--bleu-100)}
+.doc p+p{margin-top:12px}
+.doc ul{padding-left:20px;margin:12px 0 0}
+.retour{font-size:14px;line-height:20px;color:var(--muted);text-decoration:none}
+.retour:hover{color:var(--blanc)}
+
+@media (max-width:860px){
+  .hero-grid{grid-template-columns:1fr;gap:16px;padding-block:8px 56px}
+  .stage{order:-1;max-width:340px}
+  .steps{grid-template-columns:repeat(2,1fr)}
+}
+@media (max-width:560px){
+  section{padding-block:56px}
+  .steps,.engagements{grid-template-columns:1fr}
+  .lead{font-size:16px;line-height:24px}
+  .top .edition{display:none}
+}
+@media (prefers-reduced-motion:reduce){
+  .stage .tilt{transition:none}
+}
+.pack img{width:100%;height:auto}
+.back img{object-fit:cover}

@@ -1,0 +1,126 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Elicards — le jeu de cartes de la présidentielle 2027</title>
+<meta name="description" content="Ouvre un booster, tire un candidat à la présidentielle 2027 et découvre son programme. Une app gratuite, neutre et sourcée, bientôt sur iPhone.">
+<meta name="theme-color" content="#070E36">
+<link rel="canonical" href="https://elicards.fr/">
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="fr_FR">
+<meta property="og:site_name" content="Elicards">
+<meta property="og:title" content="Elicards — le jeu de cartes de la présidentielle 2027">
+<meta property="og:description" content="Ouvre un booster, tire un candidat et découvre son programme. Gratuit, neutre et sourcé.">
+<meta property="og:url" content="https://elicards.fr/">
+<meta property="og:image" content="https://elicards.fr/assets/booster.webp">
+<link rel="preload" href="assets/fonts/bricolage-grotesque.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<div class="hero">
+  <header class="wrap top">
+    <a class="brand" href="./" aria-label="Elicards, accueil">Elicards</a>
+    <span class="edition">Édition Élysée 2027</span>
+  </header>
+
+  <main class="wrap hero-grid">
+    <div>
+      <h1>Le jeu de cartes de la <em>présidentielle 2027</em></h1>
+      <p class="lead">Ouvre un booster, tire un candidat, découvre son programme. Collectionne les 20 candidats et leurs éditions rares, avec des propositions résumées et sourcées.</p>
+      <div class="cta">
+        <span class="pill"><span class="dot" aria-hidden="true"></span>Bientôt sur iPhone</span>
+        <span class="note">Gratuit · sans publicité</span>
+      </div>
+    </div>
+
+    <div class="stage" id="stage" aria-hidden="true">
+      <div class="tilt">
+        <div class="back g"><img src="assets/dos.svg" alt=""><i class="holo"></i></div>
+        <div class="back d"><img src="assets/dos.svg" alt=""><i class="holo"></i></div>
+        <div class="pack"><img src="assets/booster.webp" alt="" width="950" height="1656"><i class="shine"></i></div>
+      </div>
+    </div>
+  </main>
+</div>
+
+<section class="wrap" aria-labelledby="t-comment">
+  <p class="kicker">Comment ça marche</p>
+  <h2 id="t-comment">Un booster, une carte, un programme</h2>
+  <ol class="steps">
+    <li><h3>Ouvre un booster</h3><p>Déchire le paquet du bout du doigt : une carte en sort, parfois holo, full art ou or.</p></li>
+    <li><h3>Découvre le candidat</h3><p>Dix mesures de son programme, résumées en quelques lignes, chacune avec sa source.</p></li>
+    <li><h3>Teste-toi</h3><p>« Qui défend cette proposition ? » Trois questions, quatre candidats au choix.</p></li>
+    <li><h3>Compose ton programme</h3><p>Choisis à l’aveugle les mesures qui te parlent, et découvre de qui elles viennent.</p></li>
+  </ol>
+</section>
+
+<section class="wrap" aria-labelledby="t-engagements">
+  <p class="kicker">Nos engagements</p>
+  <h2 id="t-engagements">Pour comprendre, pas pour convaincre</h2>
+  <div class="engagements">
+    <div class="engagement">
+      <span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v18M5 7h14M5 7l-3 7h6zM19 7l-3 7h6z"/></svg></span>
+      <div><h3>Neutre</h3><p>Aucun candidat n’est favorisé, aucun avis sur les mesures, aucune consigne de vote. Tous les programmes sont présentés de la même façon.</p></div>
+    </div>
+    <div class="engagement">
+      <span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M10 14a4 4 0 0 0 5.7 0l3-3a4 4 0 0 0-5.7-5.7l-1 1"/><path d="M14 10a4 4 0 0 0-5.7 0l-3 3a4 4 0 0 0 5.7 5.7l1-1"/></svg></span>
+      <div><h3>Sourcé</h3><p>Chaque mesure renvoie à sa source : programme officiel, ancien programme ou déclaration rapportée par la presse. Les chiffres sont ceux des candidats.</p></div>
+    </div>
+    <div class="engagement">
+      <span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></span>
+      <div><h3>Indépendant</h3><p>Elicards n’est lié à aucun candidat ni à aucun parti, et ne reçoit d’argent d’aucun d’entre eux.</p></div>
+    </div>
+    <div class="engagement">
+      <span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="11" width="14" height="10" rx="2"/><path d="M8 11V8a4 4 0 0 1 8 0v3"/></svg></span>
+      <div><h3>Ta vie privée respectée</h3><p>Aucune question sur tes opinions politiques ni sur ton vote. Ce que tu choisis dans le jeu ne sert pas à te profiler.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="wrap" aria-labelledby="t-contact">
+  <div class="contact">
+    <h2 id="t-contact">Une question, une erreur repérée ?</h2>
+    <p>Écris-nous : une suggestion, une mesure mal résumée ou une source à corriger, on lit tout.</p>
+    <a class="mail" href="mailto:contact@elicards.fr">contact@elicards.fr</a>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="foot">
+      <span>© 2026 Elicards</span>
+      <nav aria-label="Informations">
+        <a href="mentions-legales.html">Mentions légales et confidentialité</a>
+        <a href="mailto:contact@elicards.fr">Contact</a>
+      </nav>
+    </div>
+    <p class="disclaimer">Elicards est un projet indépendant. Les candidats et les partis ne sont pas associés au projet et ne l’ont pas validé. Les programmes sont présentés à titre informatif, d’après les documents publiés par chaque candidat.</p>
+  </div>
+</footer>
+
+<script>
+/* Inclinaison des cartes au doigt ou à la souris (rien n’est enregistré) */
+(() => {
+  const s = document.getElementById("stage");
+  if (!s || matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+  const poser = e => {
+    const r = s.getBoundingClientRect();
+    const x = Math.min(Math.max((e.clientX - r.left) / r.width, 0), 1), y = Math.min(Math.max((e.clientY - r.top) / r.height, 0), 1);
+    s.classList.add("suit");
+    s.style.setProperty("--ry", `${(x - .5) * 18}deg`);
+    s.style.setProperty("--rx", `${(.5 - y) * 14}deg`);
+    s.style.setProperty("--mx", `${x * 100}%`);
+    s.style.setProperty("--my", `${y * 100}%`);
+  };
+  const remettre = () => { s.classList.remove("suit"); ["--rx", "--ry"].forEach(v => s.style.setProperty(v, "0deg")); ["--mx", "--my"].forEach(v => s.style.setProperty(v, "50%")); };
+  s.addEventListener("pointermove", poser);
+  s.addEventListener("pointerleave", remettre);
+  s.addEventListener("pointerup", e => { if (e.pointerType !== "mouse") remettre(); });
+})();
+</script>
+</body>
+</html>
