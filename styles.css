@@ -132,3 +132,4 @@ body.accueil footer{margin-top:0}
 .hero h1 + .cta{margin-top:32px}
 body.accueil .hero-grid{align-content:center}
 body.accueil .hero-grid{padding-block:32px}
+@media (max-width:860px){body.accueil .hero-grid > div:first-child{text-align:center}body.accueil .cta{justify-content:center}}
