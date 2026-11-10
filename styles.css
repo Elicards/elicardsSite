@@ -124,3 +124,8 @@ footer{padding-block:40px 48px;border-top:1px solid var(--line);margin-top:72px}
 }
 .pack img{width:100%;height:auto}
 .back img{object-fit:cover}
+/* Accueil : une seule section, qui occupe l’écran ; le pied de page reste en bas */
+body.accueil{min-height:100vh;min-height:100svh;display:flex;flex-direction:column}
+body.accueil .hero{flex:1;display:flex;flex-direction:column}
+body.accueil .hero-grid{flex:1}
+body.accueil footer{margin-top:0}
